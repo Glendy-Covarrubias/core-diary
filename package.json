@@ -1,0 +1,26 @@
+{
+  "name": "core-diary",
+  "version": "1.0.0",
+  "description": "Back del sistema de agenda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glendy-Covarrubias/core-diary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Glendy-Covarrubias/core-diary/issues"
+  },
+  "homepage": "https://github.com/Glendy-Covarrubias/core-diary#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
