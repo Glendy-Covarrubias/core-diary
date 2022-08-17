@@ -1,4 +1,4 @@
-import { DiaryEntry } from "../models/diary";
+import { DiaryEntry } from "../models/diary.d";
 
 const diaryData = [{
     id: 1,
