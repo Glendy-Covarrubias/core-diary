@@ -5,6 +5,7 @@ import './models/Diary.ts';
 const app = express();
 const cors = require('cors');
 const sequelize = require('./database/db');
+//const Diary = require('./models/Diary');
 
 //app.use(express.json());
 app.use(cors());

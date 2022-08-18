@@ -1,13 +1,9 @@
-import { DataTypes } from 'sequelize';
-
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../database/db');
 
-const Diary = sequelize.define('diarys', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
+class Diary extends Model {};
+
+Diary.init({
     name: {
         type: DataTypes.STRING
     },
@@ -17,6 +13,9 @@ const Diary = sequelize.define('diarys', {
     description: {
         type: DataTypes.STRING
     }
+},{
+    sequelize,
+    modelName: "diary"
 });
 
 module.exports = Diary;
