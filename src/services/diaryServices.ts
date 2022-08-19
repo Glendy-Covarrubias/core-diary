@@ -1,4 +1,4 @@
-import { DiaryEntry } from "../models/diary.d";
+/*import { DiaryEntry } from "../diary";
 
 const diaryData = [{
     id: 1,
@@ -20,4 +20,15 @@ const diaryData = [{
 //export const getEntries = (): DiaryEntry[] => diaries;
 
 const diaries: DiaryEntry[] = diaryData as DiaryEntry[];
-export const getEntries = (): DiaryEntry[] => diaries;
+export const getEntries = (): DiaryEntry[] => diaries;*/
+
+//import { DiaryModel } from "../models/Diary";
+const Diary = require('../models/Diary');
+
+export async function getDiariesServices() {
+  try {
+    return await Diary.findAll();
+  } catch (error: any) {
+    throw Error(error);
+  }
+}

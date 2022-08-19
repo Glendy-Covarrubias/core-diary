@@ -1,5 +1,5 @@
 import express from "express";
-import diaryRouter from "./routes/diaries";
+import diaryRouter from "./routes/diariesRoutes";
 import './models/Diary.ts';
 
 const app = express();
@@ -17,7 +17,8 @@ app.get('/ping', (_req, res) => {
     res.send('pong');
 });
 
-app.use('/api/diaries', diaryRouter);
+//app.use('/api/diaries', diaryRouter);
+app.use('/api', diaryRouter);
 
 /*app.listen(PORT, () => {
  console.log(`Server running on port ${PORT}`);
@@ -25,7 +26,7 @@ app.use('/api/diaries', diaryRouter);
 
 async function main() {
     try {
-        await sequelize.sync();
+        await sequelize.sync({ alter: true });
         console.log(`Server running on port ${PORT}`);
         console.log('Connection has been established successfully.');
         app.listen(PORT);
