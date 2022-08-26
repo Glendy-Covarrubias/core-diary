@@ -1,27 +1,18 @@
-//import { Model, DataTypes } from "sequelize";
-//var { Model, DataTypes } = require('sequelize');
-/*Association import {
-    DataTypes, Model
-  } from 'sequelize';
-var sequelize = require('../database/db');*/
-
 import { DataTypes, Model } from 'sequelize';
-//import { sequelize } from '../database/db';
-
 const sequelize = require('../database/db');
-const Activity = require('./Activity');
 
-class Diary extends Model {
+class Activity extends Model {
     declare id: number;
     declare createdAt: Date;
     declare updatedAt: Date;
     declare name: string;
     declare priority: number;
+    declare time: number;
     declare status: any;
     declare description: string | null;
 };
 
-Diary.init({
+Activity.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -29,7 +20,8 @@ Diary.init({
     },
     createdAt: {
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
+        defaultValue: DataTypes.NOW,
+        allowNull: false
     },
     updatedAt: {
         type: DataTypes.DATE
@@ -42,6 +34,9 @@ Diary.init({
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    time: {
+        type: DataTypes.INTEGER,
+    },
     status: {
         type: DataTypes.ENUM('Process', 'Stopped', 'Done'),
         allowNull: false
@@ -51,18 +46,7 @@ Diary.init({
     }
 }, {
     sequelize,
-    modelName: "diaries"
+    modelName: "activities"
 });
 
-Diary.hasMany(Activity, {
-    sourceKey: 'id',
-    foreignKey: 'diaryId',
-    as: 'activities'
-});
-
-Activity.belongsTo(Diary, {
-    targetKey: 'id',
-    foreignKey: 'diaryId'
-});
-
-module.exports = Diary;
+module.exports = Activity;
