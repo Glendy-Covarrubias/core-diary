@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 const { database } = require('../config');
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelizeBD = new Sequelize(
+const sequelize = new Sequelize(
     database.database,
     database.username,
     database.password, {
@@ -11,4 +11,4 @@ const sequelizeBD = new Sequelize(
     }
 );
 
-module.exports = sequelizeBD;
+module.exports = sequelize;
