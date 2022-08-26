@@ -1,15 +1,7 @@
-//import { Model, DataTypes } from "sequelize";
-
-import {  DataTypes, Model } from 'sequelize';
-//import { sequelize } from '../database/db';
-//import { Diary } from './Diary';
+import { DataTypes, Model } from 'sequelize';
 
 const sequelize = require('../database/db');
 const Diary = require('./Diary');
-  
-
-//var sequelize = require('../database/db');
-//var { Diary } = require('./Diary');
 
 export class User extends Model {
     declare id: number;
@@ -18,10 +10,7 @@ export class User extends Model {
     declare firstName: string;
     declare lastName: string;
     declare birthday: Date | null;
-    declare gender: Enumerator; /**Comoponer Enum */
-    /*declare static associations: {
-        diaries: Association<User, Diary>;
-    };*/
+    declare gender: Enumerator;
 };
 
 User.init({

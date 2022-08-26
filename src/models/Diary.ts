@@ -1,12 +1,4 @@
-//import { Model, DataTypes } from "sequelize";
-//var { Model, DataTypes } = require('sequelize');
-/*Association import {
-    DataTypes, Model
-  } from 'sequelize';
-var sequelize = require('../database/db');*/
-
 import { DataTypes, Model } from 'sequelize';
-//import { sequelize } from '../database/db';
 
 const sequelize = require('../database/db');
 const Activity = require('./Activity');

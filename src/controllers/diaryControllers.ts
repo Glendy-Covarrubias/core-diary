@@ -1,7 +1,6 @@
 
 import { Request, Response } from "express";
 import { getDiariesServices } from "../services/diaryServices";
-//import { DiaryModel } from "../models/Diary.ts";
 
 export async function getDiariesController(req: Request, res: Response) {
     try {

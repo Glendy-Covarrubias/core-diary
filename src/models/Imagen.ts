@@ -1,4 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
+
 const sequelize = require('../database/db');
 const Activity = require('./Activity');
 
@@ -46,6 +47,5 @@ Activity.belongsTo(Imagen, {
     targetKey: 'id',
     foreignKey: 'imagenId'
 });
-
 
 module.exports = Imagen;
