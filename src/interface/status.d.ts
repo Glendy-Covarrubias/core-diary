@@ -1,0 +1,1 @@
+export type StatusProcess = 'Process' | 'Stopped' | 'Done';
