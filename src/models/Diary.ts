@@ -5,8 +5,8 @@ const Activity = require('./Activity');
 
 class Diary extends Model {
     declare id: number;
-    declare createdAt: Date;
-    declare updatedAt: Date;
+    /*declare createdAt: Date;
+    declare updatedAt: Date;*/
     declare name: string;
     declare priority: number;
     declare status: any;
@@ -19,13 +19,13 @@ Diary.init({
         autoIncrement: true,
         primaryKey: true
     },
-    createdAt: {
+    /*createdAt: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
     },
     updatedAt: {
         type: DataTypes.DATE
-    },
+    },*/
     name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -43,7 +43,8 @@ Diary.init({
     }
 }, {
     sequelize,
-    modelName: "diaries"
+    modelName: "diaries",
+    timestamps: true
 });
 
 Diary.hasMany(Activity, {

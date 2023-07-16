@@ -7,3 +7,11 @@ export async function getDiariesServices() {
     throw Error(error);
   }
 }
+
+export async function setDiariesServices(data : any) {
+  try {
+    return await Diary.create(data);
+  } catch (error: any) {
+    throw Error(error);
+  }
+}
