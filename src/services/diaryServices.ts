@@ -26,6 +26,7 @@ export async function updateDiariesServices(idDiary: any, data: any) {
     diary.priority = data.priority;
     diary.status = data.status;
     diary.description = data.description;
+    diary.ownerId = data.ownerId;
     return await diary.save();
   } catch (error: any) {
     throw Error(error);
