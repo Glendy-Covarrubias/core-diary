@@ -12,9 +12,9 @@ const User = require('./models/User');
 const Diary = require('./models/Diary');
 const Activity = require('./models/Activity');
 const Imagen = require('./models/Imagen');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors({'Access-Control-Allow-Origin': '*'}));
+app.use(cors({'Access-Control-Allow-Origin': '*'},"Access-Control-Allow-Headers", "X-Requested-With"));
 
 app.get('/ping', (_req, res) => {
     console.log("someone pinged her!!");

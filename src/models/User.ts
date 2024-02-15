@@ -11,6 +11,8 @@ export class User extends Model {
     declare lastName: string;
     declare birthday: Date | null;
     declare gender: Enumerator;
+    declare username: string;
+    declare password: string;
 };
 
 User.init({
@@ -39,6 +41,14 @@ User.init({
     },
     gender: {
         type: DataTypes.ENUM('Female', 'Male', 'Others'),
+        allowNull: false
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    password: {
+        type: DataTypes.STRING,
         allowNull: false
     }
 }, {
